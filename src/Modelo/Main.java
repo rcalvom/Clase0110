@@ -16,9 +16,9 @@ import javafx.scene.paint.Color;
 public class Main extends Application{
     public void start(Stage stage) throws Exception {
         Pane panel = new Pane();
-        Canvas canvas = new Canvas(300,300);
+        Canvas canvas = new Canvas(1024,512);
         panel.getChildren().add(canvas);
-        Scene scene = new Scene(panel,300,300,Color.WHITESMOKE);
+        Scene scene = new Scene(panel,1024,512,Color.WHITESMOKE);
         GraphicsContext gc = canvas.getGraphicsContext2D();
         
         LoopJuego loop = new LoopJuego(gc);
