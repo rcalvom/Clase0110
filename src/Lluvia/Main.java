@@ -1,5 +1,5 @@
 
-package Modelo;
+package Lluvia;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -11,19 +11,19 @@ import javafx.scene.paint.Color;
 
 /**
  *
- * @author Estudiante
+ * @author Ricardo Andrés Calvo
  */
 public class Main extends Application{
+    
+    @Override
     public void start(Stage stage) throws Exception {
         Pane panel = new Pane();
         Canvas canvas = new Canvas(1024,512);
         panel.getChildren().add(canvas);
         Scene scene = new Scene(panel,1024,512,Color.WHITESMOKE);
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        
         LoopJuego loop = new LoopJuego(gc);
         loop.start();
-        
         stage.setTitle("Ejemplo Canvas");
         stage.setScene(scene);
         stage.show();
