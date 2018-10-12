@@ -1,7 +1,7 @@
 
 package Lluvia;
 
-import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 /**
@@ -18,7 +18,7 @@ public class Gota {
         this.X = X;
         this.Y = (int) (Math.random()*400+1);
         this.velocidad = (int) (Math.random()*5+1);
-        this.area = new Circle(this.X+15, this.Y+15, 15);
+        this.area = new Rectangle(this.X, this.Y, 15,15);
     }
 
     public int getX() {
@@ -51,7 +51,7 @@ public class Gota {
     
     public void Avanzar(){
         this.Y+=this.velocidad;
-        this.area = new Circle(this.X+15, this.Y+15, 15);
+        this.area = new Rectangle(this.X, this.Y, 15, 15);
         if(this.Y>=425){
             this.Y=0;
             this.velocidad = (int) (Math.random()*5+1);

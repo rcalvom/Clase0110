@@ -30,7 +30,7 @@ public class LoopJuego extends AnimationTimer {
         gc.drawImage(fondo, 0, 0);
         
         //recrear movimiento gato
-        if(gato.getX()==1024){
+        if(gato.getX()>=1024){
             gato.setX(-132);
         }
         gc.drawImage(gato.getImagen(), 132*gato.getNumMov(), 0, 132, 80, gato.getX(), gato.getY(), 132, 80);

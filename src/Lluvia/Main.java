@@ -24,7 +24,7 @@ public class Main extends Application{
         GraphicsContext gc = canvas.getGraphicsContext2D();
         LoopJuego loop = new LoopJuego(gc);
         loop.start();
-        stage.setTitle("Ejemplo Canvas");
+        stage.setTitle("Gato bajo la lluvia");
         stage.setScene(scene);
         stage.show();
     }    
