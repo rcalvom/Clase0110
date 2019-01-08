@@ -51,7 +51,7 @@ public class Gato {
     }
 
     public int getY() {
-        return Y;
+        return this.Y;
     }
 
     public void setY(int Y) {
@@ -59,11 +59,11 @@ public class Gato {
     }
 
     public int getVelocidad() {
-        return velocidad;
+        return this.velocidad;
     }
 
     public Shape getArea() {
-        return area;
+        return this.area;
     }
 
     public void setArea(Shape area) {

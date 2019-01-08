@@ -48,6 +48,14 @@ public class Gota {
     public void setArea(Shape area) {
         this.area = area;
     }
+
+    public void setVelocidad(int velocidad) {
+        this.velocidad = velocidad;
+    }
+    
+    public void newVelocidad(){
+        this.velocidad = this.velocidad = (int) (Math.random()*5+1);
+    }
     
     public void Avanzar(){
         this.Y+=this.velocidad;

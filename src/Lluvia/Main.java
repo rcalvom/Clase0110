@@ -2,6 +2,7 @@
 package Lluvia;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.Pane;
@@ -13,8 +14,7 @@ import javafx.scene.paint.Color;
  *
  * @author Ricardo Andrés Calvo
  */
-public class Main extends Application{
-    
+public class Main extends Application{ 
     @Override
     public void start(Stage stage) throws Exception {
         Pane panel = new Pane();
@@ -27,10 +27,13 @@ public class Main extends Application{
         stage.setTitle("Gato bajo la lluvia");
         stage.setScene(scene);
         stage.show();
+        stage.setOnCloseRequest(( e) ->{
+            Platform.exit();
+            LoopJuego.cerrar = true;
+        });
     }    
     
     public static void main(String[] args) {
         Application.launch(args);
     }
-    
 }

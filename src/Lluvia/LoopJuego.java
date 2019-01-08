@@ -21,6 +21,8 @@ public class LoopJuego extends AnimationTimer {
     private int choques;
     private long cont;
     private final Font font;
+    private final Cronometro cronometro;
+    public static boolean cerrar = false;
    
     @Override
     public void handle(long l) {
@@ -50,11 +52,29 @@ public class LoopJuego extends AnimationTimer {
         gc.setFont(this.font);
         gc.fillText("Choques : "+this.choques, 875, 495);
         
+        //dibujar cronometro
+        gc.setFill(Color.WHITE);
+        gc.setFont(this.font);
+        if(this.cont==0){
+            cronometro.start();
+        }
+        if(LoopJuego.cerrar){
+            cronometro.setActivo(false);
+            cronometro.interrupt();
+        }        
+        gc.fillText(cronometro.getCadena(),20,495);
+      
+        //cerrar el juego después de tiempo dado.
+        /*if(cronometro.getSegundos()==10){
+            System.exit(0);    
+        }*/
+        
         //Event Manager
         for (Gota gota : gotas) {
             Shape interseccion = SVGPath.intersect(gato.getArea(),gota.getArea());
             if (interseccion.getBoundsInLocal().getWidth()!=-1 && interseccion.getBoundsInLocal().getHeight()!=-1) {
                 gota.setY(0);
+                gota.newVelocidad();
                 this.choques++;
             }
         }
@@ -73,5 +93,6 @@ public class LoopJuego extends AnimationTimer {
         this.cont = 0;
         this.choques = 0;
         this.font = new Font(20);
+        this.cronometro = new Cronometro();
     }   
 }
